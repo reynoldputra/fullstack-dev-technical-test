@@ -79,10 +79,10 @@ export class RegisterDto {
         example: 'USER',
     })
     @IsEnum(UserType, {
-        message: 'Gender must be USER or AUTHOR.',
+        message: 'Role must be USER or AUTHOR.',
     })
     @IsNotEmpty({
-        message: 'User type should not be empty',
+        message: 'Role should not be empty',
     })
     user_type: UserType;
 }
