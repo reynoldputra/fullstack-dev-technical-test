@@ -74,9 +74,11 @@ const RegisterForm = ({
   }, [error]);
 
   return (
-    <div className="border border-input w-[448px] max-w-full p-12 rounded-md">
+    <>
       <div className="w-full flex justify-center">
-        <h1 className="text-2xl font-bold">Register</h1>
+        <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+          Register
+        </h2>
       </div>
       <Form {...form}>
         <form
@@ -114,7 +116,7 @@ const RegisterForm = ({
           </Button>
         </form>
       </Form>
-    </div>
+    </>
   );
 };
 
