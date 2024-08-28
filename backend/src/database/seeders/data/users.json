@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Testing User",
+    "username": "testinguser",
+    "email": "testuser@reynoldputra.com",
+    "password": "password",
+    "user_type": "USER",
+    "no_telp" : "+62812342342",
+    "gender": "MALE"
+  },
+  {
+    "name": "Testing Author",
+    "username": "testingauthor",
+    "email": "testauthor@reynoldputra.com",
+    "password": "password",
+    "no_telp" : "+6281231231",
+    "user_type": "AUTHOR",
+    "gender": "FEMALE"
+  }
+]
