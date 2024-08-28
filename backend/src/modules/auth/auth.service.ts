@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { comparePassword, hashPassword } from '@/common/helpers/hash.helper';
@@ -45,14 +45,24 @@ export class AuthService {
   async register(registerDto: RegisterDto) {
     const { username, name, email, password, user_type, no_telp, gender } = registerDto;
 
-    const user = await this.prismaService.users.findUnique({
+    const user_findusername = await this.prismaService.users.findUnique({
       where: {
         username: username,
       },
     });
 
-    if (user) {
-      throw new NotFoundException('User already exists');
+    if (user_findusername) {
+      throw new BadRequestException('Username is already used');
+    }
+
+    const user_findemail = await this.prismaService.users.findUnique({
+      where: {
+        email : email
+      },
+    });
+
+    if (user_findemail) {
+      throw new BadRequestException('email is already used');
     }
 
     const hashedPassword = await hashPassword(password);
@@ -69,11 +79,15 @@ export class AuthService {
       },
     });
 
+    delete newUser.password
+    delete newUser.id
+
     return {
       access_token: this.jwtService.sign({
         username: newUser.username,
         id: newUser.id,
       }),
+      ...newUser
     };
   }
 

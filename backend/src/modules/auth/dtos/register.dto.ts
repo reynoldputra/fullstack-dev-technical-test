@@ -17,8 +17,8 @@ export class RegisterDto {
     @IsString({
         message: 'Username must be a string',
     })
-    @Matches(/^[A-Za-z]+$/, {
-        message: 'Username must contain alphabets only',
+    @Matches(/^[A-Za-z0-9]+$/, {
+        message: 'Username must contain alphanumeric characters',
     })
     @MinLength(8, {
         message: 'Username must be at least 8 characters long',
