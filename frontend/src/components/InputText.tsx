@@ -1,4 +1,4 @@
-import { useFormContext } from "react-hook-form";
+import { get, useFormContext } from "react-hook-form";
 import {
   FormControl,
   FormDescription,
@@ -8,13 +8,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input, InputProps } from "./ui/input";
+import { useEffect } from "react";
 
 interface InputTextProps extends InputProps {
-  label: string
+  label: string;
   description?: string;
 }
 
-const InputText = ({label, name = "", description, ...rest }: InputTextProps) => {
+const InputText = ({
+  label,
+  name = "",
+  description,
+  ...rest
+}: InputTextProps) => {
   const { control } = useFormContext();
 
   return (
@@ -24,10 +30,10 @@ const InputText = ({label, name = "", description, ...rest }: InputTextProps) =>
       render={({ field }) => (
         <FormItem>
           <FormLabel>{label}</FormLabel>
+          {description && <FormDescription>{description}</FormDescription>}
           <FormControl>
             <Input {...field} {...rest} />
           </FormControl>
-          {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />
         </FormItem>
       )}
