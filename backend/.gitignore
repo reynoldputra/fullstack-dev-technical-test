@@ -48,3 +48,4 @@ lerna-debug.log*
 docker
 docker/*
 docker-compose-local.yml
+.vercel

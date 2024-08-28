@@ -24,7 +24,7 @@
     "db:push": "npx prisma db push",
     "db:seed": "ts-node --transpile-only ./src/database/seeders/seed.ts",
     "db:migrate": "npx prisma migrate",
-    "postinstall": "husky install"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@nestjs-modules/mailer": "^1.10.3",

@@ -19,7 +19,14 @@ async function bootstrap() {
       stopAtFirstError: true,
     }),
   );
-  app.enableCors();
+  app.enableCors({
+    origin: ['http://localhost:3000'],
+    allowedHeaders: ['Accept', 'Content-Type'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true,
+  });
 
   const config = new DocumentBuilder()
     .addBearerAuth()

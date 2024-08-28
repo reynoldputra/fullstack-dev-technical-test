@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
-import { comparePassword, hashPassword } from '@/common/helpers/hash.helper';
-import { CustomException } from '@/common/response/CustomException';
-import { PrismaService } from '@/providers/prisma';
+import { comparePassword, hashPassword } from '../../common/helpers/hash.helper';
+import { CustomException } from '../../common/response/CustomException';
+import { PrismaService } from '../../providers/prisma';
 import { LoginDto } from './dtos/login.dto';
 import { RegisterDto } from './dtos/register.dto';
 

@@ -8,9 +8,9 @@ import {
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
-import { ResponseMessage } from '@/common/decorators/responseMessage.decorator';
-import { Token } from '@/common/decorators/token.decorator';
-import { JwtAuthGuard } from '@/common/guards/jwt';
+import { ResponseMessage } from '../../common/decorators/responseMessage.decorator';
+import { Token } from '../../common/decorators/token.decorator';
+import { JwtAuthGuard } from '../../common/guards/jwt';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dtos/login.dto';
 import { RegisterDto } from './dtos/register.dto';

@@ -3,8 +3,8 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import path from 'path';
-import { AllExceptionsFilter } from '@/common/filters/exception.filter';
-import { ResponseInterceptor } from '@/common/interceptors/response.interceptor';
+import { AllExceptionsFilter } from '../common/filters/exception.filter';
+import { ResponseInterceptor } from '../common/interceptors/response.interceptor';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -12,7 +12,7 @@ import { AppService } from './app.service';
 // ###################
 // ## Child modules ##
 // ###################
-import { AuthModule } from '@/modules/auth';
+import { AuthModule } from '../modules/auth';
 
 
 
