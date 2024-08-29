@@ -2,6 +2,8 @@
 
 This project was created as a technical assignment for the Fullstack Engineer internship at KinetixPro.
 
+https://fullstack-intern-frontend.vercel.app/
+
 ## Backend
 
 ### Technology
