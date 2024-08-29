@@ -27,7 +27,7 @@ const useRegister = () => {
         if (
           err_response &&
           err_response.status == 400 &&
-          err_response.data.error[0] &&
+          err_response.data?.error &&
           isErrorValidation(err_response.data.error[0])
         ) {
           setError(err_response.data.error);
