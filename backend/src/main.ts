@@ -20,7 +20,7 @@ async function bootstrap() {
     }),
   );
   app.enableCors({
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', process.env.FRONTEND_DOMAIN],
     allowedHeaders: ['Accept', 'Content-Type'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     preflightContinue: false,
